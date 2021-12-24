@@ -10,7 +10,7 @@ disable-default-queries: true
 
 queries:
    - name: Custom
-     uses: ./.github/workflows/codeql/codeql-queries/Log4JndiInjection.ql
+     uses: ./.github/workflows/codeql/queries/Log4JndiInjection.ql
   # - name: Extended Security
   #   uses: security-extended
   # - name: Security and Quality
