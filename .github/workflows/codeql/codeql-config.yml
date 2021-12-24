@@ -1,9 +1,13 @@
-name: "Security and Quality"
+# name: "Security and Quality"
 
-queries: 
-  - name: Security and Quality
-    uses: security-and-quality
+# queries: 
+#   - name: Security and Quality
+#     uses: security-and-quality
 
-# name: "Additional Queries"
-#   - name: Custom
-#     uses: .github/workflows/codeql/codeql-queries/Log4JndiInjection.ql
+ name: "Additional Queries"
+
+disable-default-queries: true
+
+ queries:
+   - name: Custom
+     uses: ./.github/workflows/codeql/codeql-queries/Log4JndiInjection.ql
