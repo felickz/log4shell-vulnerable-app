@@ -4,10 +4,16 @@
 #   - name: Security and Quality
 #     uses: security-and-quality
 
- name: "Additional Queries"
+name: "My CodeQL config"
 
 disable-default-queries: true
 
- queries:
+queries:
    - name: Custom
      uses: ./.github/workflows/codeql/codeql-queries/Log4JndiInjection.ql
+  # - name: Extended Security
+  #   uses: security-extended
+  # - name: Security and Quality
+  #   uses: security-and-quality
+  # - name: codeql repo
+  #   uses: github/codeql/java/ql/src/codeql-suites/java-code-scanning.qls@v1.24.0
