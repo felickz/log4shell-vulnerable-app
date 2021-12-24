@@ -1,3 +1,13 @@
+# DEMO 
+
+ - [X] Clone a [vulnerable repo](https://github.com/christophetd/log4shell-vulnerable-app) (bonus - log4j ... double bonus - uses docker)
+ - [X] Implement [GHAS Code Scanning w/ CodeQL](https://github.com/felickz/log4shell-vulnerable-app/actions/workflows/codeql-analysis.yml)
+ - [X] Try out [custom scanning for containers](https://github.com/felickz/log4shell-vulnerable-app/actions/workflows/container-image-scan.yml) 
+    - [ ] need to figure out how to upload results back to Security findings with SARIF
+ - [X] Write a custom query (ok fine - borrowed a timely query([Log4JndiInjection.ql](https://github.com/felickz/log4shell-vulnerable-app/blob/main/.github/workflows/codeql/queries/Log4JndiInjection.ql)) ... but was fairly close in implementing a similar query from scratch! [Log4jInUse.ql](https://github.com/felickz/log4shell-vulnerable-app/blob/main/.github/workflows/codeql/queries/Log4JndiInjection.ql)) - was 4 am and didnt debug: `Expected result pattern(s) are not present for problem query: Expected exactly one pattern. [INVALID_RESULT_PATTERNS]`
+ - [X] [Remediate a vulnerability ](https://github.com/felickz/log4shell-vulnerable-app/security/code-scanning/1?query=ref%3Arefs%2Fheads%2Fmain)
+
+
 # Log4Shell sample vulnerable application (CVE-2021-44228)
 
 This repository contains a Spring Boot web application vulnerable to CVE-2021-44228, nicknamed [Log4Shell](https://www.lunasec.io/docs/blog/log4j-zero-day/).
