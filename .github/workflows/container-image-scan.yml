@@ -9,10 +9,22 @@ jobs:
 
     - name: Anchore Grype Image Scan
       uses: anchore/scan-action@v3
+      id: scan
       with:
         image: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
+        fail-build: false
+        
+    - name: upload Anchore scan SARIF report
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
+
+#Optionally, you can add a step to inspect the SARIF report produced:
+    - name: Inspect action SARIF report
+      run: cat ${{ steps.scan.outputs.sarif }}
     
     - name: AnalyzeES
       uses: Azure/container-scan@v0.1
       with:
         image-name: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
+        continue-on-error: true
