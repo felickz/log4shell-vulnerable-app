@@ -7,6 +7,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
+    - name: Anchore Grype Image Scan
+      uses: anchore/scan-action@v3
+      with:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
     
     - name: AnalyzeES
       uses: Azure/container-scan@v0.1
