@@ -16,7 +16,8 @@ public class MainController {
     @GetMapping("/")
     public String index(@RequestHeader("X-Api-Version") String apiVersion) {
         //Really lame sanitizer - see if we can get past code analyzer
-        logger.info("Received a request for API version " + apiVersion.replaceAll("[^.0-9]",""));
+        //Removing Sanitizer to re-open alert! logger.info("Received a request for API version " + apiVersion.replaceAll("[^.0-9]",""));
+        logger.info("Received a request for API version " + apiVersion);
         return "Hello, world!";
     }
 
