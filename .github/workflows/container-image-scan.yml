@@ -12,7 +12,7 @@ jobs:
       id: scan
       with:
         image: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
-        fail-build: true
+        #fail-build: true
         
     - name: upload Anchore scan SARIF report
       if: always()
