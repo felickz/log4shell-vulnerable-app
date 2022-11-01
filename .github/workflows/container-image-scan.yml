@@ -26,7 +26,8 @@ jobs:
         
     - name: pretty print sarif via https://lib.rs/crates/sarif-fmt
       run: |
-        cargo binstall sarif-fmt
+        #cargo install sarif-fmt
+        curl -sSL https://github.com/psastras/sarif-rs/releases/download/sarif-fmt-latest/sarif-fmt-x86_64-unknown-linux-gnu -o sarif-fmt
         cat ${{ steps.scan.outputs.sarif }} | sarif-fmt
 
 
