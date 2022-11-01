@@ -23,6 +23,12 @@ jobs:
       with:        
         name: sarif-results
         path: ${{ steps.scan.outputs.sarif }}
+        
+    - name: pretty print sarif via https://lib.rs/crates/sarif-fmt
+      run: |
+        cargo install sarif-fmt
+        cat ${{ steps.scan.outputs.sarif }} | sarif-fmt
+
 
 #Optionally, you can add a step to inspect the SARIF report produced:
     - name: Inspect action SARIF report
