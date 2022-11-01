@@ -19,12 +19,17 @@ jobs:
       with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
 
+    - uses: actions/upload-artifact@v3
+      with:        
+        name: sarif-results
+        path: ${{ steps.scan.outputs.sarif }}
+
 #Optionally, you can add a step to inspect the SARIF report produced:
     - name: Inspect action SARIF report
       run: cat ${{ steps.scan.outputs.sarif }}
     
-    - name: AnalyzeES
-      uses: Azure/container-scan@v0.1
-      with:
-        image-name: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
-        continue-on-error: true
+#    - name: AnalyzeES
+#      uses: Azure/container-scan@v0.1
+#      with:
+#        image-name: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
+#        continue-on-error: true
