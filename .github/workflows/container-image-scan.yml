@@ -26,7 +26,7 @@ jobs:
         
     - name: pretty print sarif via https://lib.rs/crates/sarif-fmt
       run: |
-        cargo install sarif-fmt
+        cargo bininstall sarif-fmt
         cat ${{ steps.scan.outputs.sarif }} | sarif-fmt
 
 
