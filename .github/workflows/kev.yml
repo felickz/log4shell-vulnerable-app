@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   dependabot-kev-action:
-    name: 'CISA KEV Compliance Action'
+    name: 'CISA KEV Compliance Check'
     runs-on: ubuntu-latest
     steps:
       - name: 'KEV Policy'
