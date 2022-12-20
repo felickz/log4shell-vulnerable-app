@@ -8,4 +8,4 @@ jobs:
       - name: 'KEV Policy'
         uses: felickz/dependabot-kev-action@main
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
