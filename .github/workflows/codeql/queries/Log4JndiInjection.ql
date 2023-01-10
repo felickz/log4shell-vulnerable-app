@@ -14,6 +14,8 @@
  *       external/cwe/cwe-502
  */
 
+//see this query in github repo: https://github.com/github/codeql/blob/main/java/ql/src/experimental/Security/CWE/CWE-020/Log4jJndiInjection.ql
+
 import java
 import semmle.code.java.dataflow.FlowSources
 import semmle.code.java.dataflow.ExternalFlow
