@@ -6,7 +6,7 @@
  * @kind path-problem
  * @problem.severity error
  * @precision high
- * @id java/log4j-injection
+ * @id java/log4j-injection-felickz
  * @tags security
  *       experimental
  *       external/cwe/cwe-020
