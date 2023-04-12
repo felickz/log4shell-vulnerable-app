@@ -34,7 +34,8 @@ jobs:
 #Optionally, you can add a step to inspect the SARIF report produced:
     - name: Inspect action SARIF report
       run: cat ${{ steps.scan.outputs.sarif }}
-    
+
+# Deprecated - Use Trivy and Dockle separately
 #    - name: AnalyzeES
 #      uses: Azure/container-scan@v0.1
 #      with:
