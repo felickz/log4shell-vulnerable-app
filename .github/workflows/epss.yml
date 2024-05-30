@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: 'EPSS Policy'
         uses: advanced-security/dependabot-epss-action@main
-        with:
-          epss-threshold: 0.6
+        # with:
+        #   epss-threshold: 0.6
         env:
             GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
