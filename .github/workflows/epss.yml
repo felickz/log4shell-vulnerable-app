@@ -3,10 +3,12 @@ on: [push, workflow_dispatch]
 
 jobs:
   dependabot-kev-action:
-    name: 'CISA KEV Compliance Check'
+    name: 'EPSS Compliance Check'
     runs-on: ubuntu-latest
     steps:
-      - name: 'KEV Policy'
+      - name: 'EPSS Policy'
         uses: advanced-security/dependabot-epss-action@main
+        with:
+          epss-threshold: 0.6
         env:
             GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
