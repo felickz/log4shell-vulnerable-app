@@ -5,17 +5,17 @@ jobs:
   dependabot-kev-action:
     name: 'EPSS Compliance Check'
     runs-on: ubuntu-latest
-    permissions:
-      security-events: write
-      contents: read
+    # permissions:
+    #   security-events: write
+    #   contents: read
     steps:
       - name: 'EPSS Policy'
         uses: advanced-security/dependabot-epss-action@v0
         # with:
         #   epss-threshold: 0.6
         env:
-            #GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
+            #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
   deploy:
      name: 'Code Deploy'
