@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       security-events: read
+      contents: read
     steps:
       - name: 'EPSS Policy'
         uses: advanced-security/dependabot-epss-action@v0
