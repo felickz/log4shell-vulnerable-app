@@ -12,3 +12,12 @@ jobs:
         #   epss-threshold: 0.6
         env:
             GITHUB_TOKEN: ${{ secrets.DEPENDABOT_KEV_GITHUB_TOKEN }}
+  deploy:
+     name: 'Code Deploy'
+     needs: dependabot-kev-action
+     runs-on: ubuntu-latest
+  
+     steps:
+      - name: Deploy code
+        run: echo "Deploying code..."
+        # Add your deployment script/command here
