@@ -6,7 +6,7 @@ jobs:
     name: 'EPSS Compliance Check'
     runs-on: ubuntu-latest
     permissions:
-      security-events: read
+      security-events: write
       contents: read
     steps:
       - name: 'EPSS Policy'
