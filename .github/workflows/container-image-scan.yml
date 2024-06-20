@@ -24,12 +24,25 @@ jobs:
         image: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
         dependency-snapshot: true
 
+    - uses: actions/upload-artifact@v3
+      with:        
+        name: sarif-results
+        path: ${{ steps.scan.outputs.sarif }}
+        
+    - name: pretty print sarif via https://lib.rs/crates/sarif-fmt
+      run: |
+        #cargo install sarif-fmt
+        curl -sSL https://github.com/psastras/sarif-rs/releases/download/sarif-fmt-latest/sarif-fmt-x86_64-unknown-linux-gnu -o sarif-fmt
+        cat ${{ steps.scan.outputs.sarif }} | sarif-fmt
+
+
 #Optionally, you can add a step to inspect the SARIF report produced:
     - name: Inspect action SARIF report
       run: cat ${{ steps.scan.outputs.sarif }}
-    
-    - name: AnalyzeES
-      uses: Azure/container-scan@v0.1
-      with:
-        image-name: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
-        continue-on-error: true
+
+# Deprecated - Use Trivy and Dockle separately
+#    - name: AnalyzeES
+#      uses: Azure/container-scan@v0.1
+#      with:
+#        image-name: docker.elastic.co/elasticsearch/elasticsearch:7.14.2
+#        continue-on-error: true
