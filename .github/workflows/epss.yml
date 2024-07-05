@@ -10,7 +10,7 @@ jobs:
     #   contents: read
     steps:
       - name: 'EPSS Policy'
-        uses: advanced-security/dependabot-epss-action@v0
+        uses: advanced-security/dependabot-epss-action@workflow-summary
         # with:
         #   epss-threshold: 0.6
         env:
